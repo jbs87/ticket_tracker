@@ -1,0 +1,17 @@
+<header>
+  <h1>Projects</h1>
+
+  <% admins_only do %>
+      <ul class="actions">
+        <li><%= link_to "New User", new_admin_user_path, class:"new" %>
+        </li>
+      </ul>
+  <% end %>
+</header>
+
+
+<% @users.each do |user| %>
+    <div id="users">
+      <h2><%= link_to(user, admin_user_path([:admin, user])) %></h2>
+    </div>
+<% end %>
